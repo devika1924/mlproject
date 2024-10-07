@@ -7,7 +7,8 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
+        background-color: #44355b;
+        background-image: linear-gradient(0deg, #44355b 0%, #ececec 74%);
         color: #333;
         margin: 0;
         padding: 0;
@@ -27,24 +28,35 @@
       }
 
       h1 {
-        color: #007bff;
+        color: #44355b;
         margin-bottom: 20px;
       }
 
       .prediction {
         margin-top: 20px;
         padding: 10px;
-        background-color: #e9f7fe;
-        border-left: 4px solid #007bff;
+        border-left: 4px solid;
         border-radius: 4px;
         font-weight: bold;
-        color: #007bff;
+        color: #fff;
+      }
+
+      .prediction.diabetes {
+        background-color: #f8d7da;
+        border-color: #dc3545;
+        color: #dc3545;
+      }
+
+      .prediction.no-diabetes {
+        background-color: #d4edda;
+        border-color: #28a745;
+        color: #28a745;
       }
 
       a {
         display: block;
         margin-top: 15px;
-        color: #007bff;
+        color: #44355b;
         text-decoration: none;
       }
 
@@ -56,8 +68,13 @@
   <body>
     <div class="container">
       <h1>Prediction Result</h1>
-      {% if prediction %}
-      <div class="prediction">Prediction: {{ prediction }}</div>
+
+      {% if prediction == 1 %}
+      <!-- Display as red if diabetes is detected -->
+      <div class="prediction diabetes">Diabetes Detected</div>
+      {% else %}
+      <!-- Display as green if no diabetes is detected -->
+      <div class="prediction no-diabetes">No Diabetes Detected</div>
       {% endif %}
 
       <a href="/">Back to input form</a>

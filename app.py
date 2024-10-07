@@ -24,17 +24,17 @@ def predict():
 
     # Make predictions using the loaded model
     prediction = model.predict(features)
-    print(f'{prediction[0]}')
+    # print(f'{prediction[0]}')
 
-    if prediction[0] == 1:
-        result = "Diabetes Detected"
-    else:
-        result = "No Diabetes Detected"
+    # if prediction[0] == 1:
+    #     result = "Diabetes Detected"
+    # else:
+    #     result = "No Diabetes Detected"
 
-    # Print the result for debugging
-    print(f'Prediction: {result}')
+    # # Print the result for debugging
+    # print(f'Prediction: {result}')
 
-    return render_template('predict.html', prediction=result)
+    return render_template('predict.html', prediction=prediction[0])
 
 if __name__ == '__main__':
     app.run(debug=True)
