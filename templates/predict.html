@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+
+      .prediction {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e9f7fe;
+        border-left: 4px solid #007bff;
+        border-radius: 4px;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      a {
+        display: block;
+        margin-top: 15px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prediction Result</h1>
+      {% if prediction %}
+      <div class="prediction">Prediction: {{ prediction }}</div>
+      {% endif %}
+
+      <a href="/">Back to input form</a>
+    </div>
+  </body>
+</html>
