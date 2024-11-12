@@ -14,8 +14,7 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Extract input features from the request
-    feature1 = float(request.form['feature1'])
+    # Extract input features from the request(FORM)
     feature2 = float(request.form['feature2'])
     feature3 = float(request.form['feature3'])
 
@@ -24,15 +23,6 @@ def predict():
 
     # Make predictions using the loaded model
     prediction = model.predict(features)
-    # print(f'{prediction[0]}')
-
-    # if prediction[0] == 1:
-    #     result = "Diabetes Detected"
-    # else:
-    #     result = "No Diabetes Detected"
-
-    # # Print the result for debugging
-    # print(f'Prediction: {result}')
 
     return render_template('predict.html', prediction=prediction[0])
 
