@@ -3,7 +3,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 import joblib
 
-data = pd.read_csv('diabetes.csv')
+data = pd.read_csv('diabetes.csv') #diabetes dataset
 
 data = data.dropna()
 
