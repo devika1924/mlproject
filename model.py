@@ -5,7 +5,7 @@ import joblib
 
 data = pd.read_csv('diabetes.csv') #diabetes dataset
 
-data = data.dropna() # removes the rows that contains NULL values
+data = data.dropna() #removes the rows that contains NULL values
 
 # Features and Target
 X = data[['Glucose', 'BloodPressure', 'BMI']] 
